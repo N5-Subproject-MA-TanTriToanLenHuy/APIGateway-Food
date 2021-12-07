@@ -23,6 +23,6 @@ logging:
 
 eureka:
   instance:
-    hostname: n5-service-discovery.herokuapp.com
+    hostname: n5-apigateway-food.herokuapp.com
     homePageUrl: https://${eureka.instance.hostName}/
     home-page-url-path: https://${eureka.instance.hostName}
