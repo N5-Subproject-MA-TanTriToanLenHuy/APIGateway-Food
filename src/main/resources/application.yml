@@ -28,4 +28,4 @@ eureka:
     home-page-url-path: https://${eureka.instance.hostName}
   client:
     serviceUrl:
-      defaultZone: https://n5-service-discovery.herokuapp.com/
+      defaultZone: https://n5-service-discovery.herokuapp.com/eureka
