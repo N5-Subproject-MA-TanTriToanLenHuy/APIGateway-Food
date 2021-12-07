@@ -1,0 +1,33 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        - id: FOOD-SERVICE
+          uri: lb://FOOD-SERVICE
+          predicates:
+            - Path=/api/food/**
+          filters:
+            - MyGatewayFilter
+        - id: JWTAUTHEN-SERVICE
+          uri: lb://JWTAUTHEN-SERVICE
+          predicates:
+            - Path=/auth/**
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+
+eureka:
+  client:
+    register-with-eureka:
+      value: true
+    fetch-registry:
+      value: true;
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+      hostname: localhost
