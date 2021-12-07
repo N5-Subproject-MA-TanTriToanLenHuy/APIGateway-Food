@@ -26,3 +26,6 @@ eureka:
     hostname: n5-apigateway-food.herokuapp.com
     homePageUrl: https://${eureka.instance.hostName}/
     home-page-url-path: https://${eureka.instance.hostName}
+  client:
+    serviceUrl:
+      defaultZone: https://n5-service-discovery.herokuapp.com/
