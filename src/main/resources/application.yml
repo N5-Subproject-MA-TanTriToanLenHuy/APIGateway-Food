@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: ${PORT:8888}
 spring:
   application:
     name: API-GATEWAY
@@ -22,12 +22,7 @@ logging:
     org.springframework.cloud.gateway: TRACE
 
 eureka:
-  client:
-    register-with-eureka:
-      value: true
-    fetch-registry:
-      value: true;
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-    instance:
-      hostname: localhost
+  instance:
+    hostname: n5-service-discovery.herokuapp.com
+    homePageUrl: https://${eureka.instance.hostName}/
+    home-page-url-path: https://${eureka.instance.hostName}
